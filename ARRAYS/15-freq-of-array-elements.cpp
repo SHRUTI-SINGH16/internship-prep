@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//TC=O(N)
+//TC=O(N)   SC=O(1)
 void freq(int arr[],int n){
     int temp = arr[0];
     int count = 1;
