@@ -15,10 +15,10 @@ using namespace std;
 // }
 
 //TC = O(N)
-int diff(int arr[],int n){
+// int diff(int arr[],int n){
     
-    return largest;
-}
+//     return largest;
+// }
 
 int main()
 {
