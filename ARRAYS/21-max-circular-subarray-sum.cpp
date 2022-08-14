@@ -26,7 +26,18 @@ using namespace std;
 //tc=O(N)  SC=O(1)
 //USED MODIFIED KANDANES ALGO
 //TOTAL-MIN SUM SUBARRAY
-void maxcircular(int arr[],int n){
+
+int kadane(int arr[],int n){
+    int largest = arr[0];
+    int sum = arr[0];
+    for(int i=1;i<n;++i){
+        sum = max(sum+arr[i],arr[i]);
+        largest = max(largest,sum);
+    }
+    return largest;
+}
+
+int maxcircular(int arr[],int n){
     int largest = INT_MAX;
     int sum = arr[0];
     int total = arr[0];
@@ -35,7 +46,10 @@ void maxcircular(int arr[],int n){
         sum = min(sum+arr[i],arr[i]);
         largest = min(sum,largest);
     }
-    cout<<total-largest;
+    if(kadane(arr,n)<0){
+        return kadane(arr,n);
+    }
+    return total-largest;
 }
 
 int main(){
@@ -45,7 +59,7 @@ int main(){
     for(int i=0;i<n;++i){
         cin>>arr[i];
     }
-    maxcircular(arr,n);
+    cout<<maxcircular(arr,n);
 
 }
 
