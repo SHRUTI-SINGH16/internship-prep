@@ -2,28 +2,51 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int ksumsubarray(int arr[],int n, int k){
-    int curr_sum = 0;
-    for(int i=0;i<k;++i){
-        curr_sum = curr_sum + arr[i];
+
+
+// //TC=O(N) SC=O(1)
+// //to count the number of flips
+// void flips(int arr[],int n){
+//     int count = 0;
+//     for(int i=0;i<n-1;++i){
+//         if(arr[i]==0 && arr[i+1]==1 || arr[i]==1 && arr[i+1]==0){
+//             count++;
+//         }
+//     }
+//     if(count%2==0){
+//         cout<<count/2<<endl;
+//     }else{
+//         cout<<count/2 + 1<<endl;
+//     }
+// }
+
+//TC=O(N) SC=O(1)
+//to print the index from where to where we need to flip the elements
+// 011100110
+void flips(int arr[],int n){
+    for(int i=1;i<n;++i){
+        if(arr[i]!=arr[i-1]){
+            if(arr[i]!=arr[0]){
+                cout<<"From "<<i<<" to ";
+            }else{
+                cout<<i-1<<endl;
+            }
+        }
     }
-    int max_sum = INT_MIN;
-    for(int i=k;i<n;++i){
-        curr_sum = curr_sum + arr[k] - arr[k-i];
-        max_sum = max(curr_sum,max_sum); 
+    if(arr[n-1]!=arr[0]){
+            cout<<n-1<<endl;
     }
-    return max_sum;
 
 }
 
 int main(){
-    int n,k;
-    cin>>n,k;
+    int n;
+    cin>>n;
     int arr[n];
     for(int i=0;i<n;++i){
         cin>>arr[i];
     }
-    cout<<ksumsubarray(arr,n,k);
+    flips(arr,n);
 
 }
 
