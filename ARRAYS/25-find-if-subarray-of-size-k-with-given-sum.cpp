@@ -3,10 +3,10 @@
 using namespace std;
 
 
-//find the max k-sized subarray sum with sliding window
+//find if a k-sized subaary of target sum exists
 //1 8 30 -5 20 7
 //o/p = 45
-int ksumsubarray(int arr[],int n, int k){
+bool ksumsubarray(int arr[],int n,int k, int sum){
     int curr_sum = 0;
     for(int i=0;i<k;++i){
         curr_sum = curr_sum + arr[i];
@@ -14,10 +14,11 @@ int ksumsubarray(int arr[],int n, int k){
     int max_sum = curr_sum;
     for(int i=k;i<n;++i){
         curr_sum = curr_sum + arr[i] - arr[i-k];
-        max_sum = max(curr_sum,max_sum); 
+        if(curr_sum==sum){
+            return true;
+        }
     }
-    return max_sum;
-
+    return false;
 }
 
 int main(){
@@ -25,11 +26,13 @@ int main(){
     cin>>n;
     int k;
     cin>>k;
+    int sum;
+    cin>>sum;
     int arr[n];
     for(int i=0;i<n;++i){
         cin>>arr[i];
     }
-    cout<<ksumsubarray(arr,n,k);
+    cout<<ksumsubarray(arr,n,k,sum);
 
 }
 
