@@ -14,6 +14,26 @@ using namespace std;
 
 // }
 
+// //TC=O(LOGN) SC=O(logn)  BINARY SEARCH RECURSIVE
+// int firstoccur(int arr[],int n, int x, int low, int high){
+//     if(low>high){
+//         return -1;
+//     }
+//         int mid = (low+high)/2;
+//         if(arr[mid]>x){
+//             return firstoccur(arr,n,x,low,mid-1);
+//         }else if(arr[mid]<x){
+//             return firstoccur(arr,n,x,mid+1,high);
+//         }else if(arr[mid]==x){
+//             if(mid==0 || arr[mid]!=arr[mid-1]){
+//                 return mid;
+//             }else{
+//                 return firstoccur(arr,n,x,low,mid-1);
+//             }
+//         }
+// }
+
+
 //TC=O(LOGN) SC=O(1)  BINARY SEARCH ITERATIVE
 int firstoccur(int arr[],int n, int x){
     int low = 0;
@@ -33,7 +53,6 @@ int firstoccur(int arr[],int n, int x){
         }
     }
     return -1;
-
 }
 
 
@@ -47,6 +66,7 @@ int main(){
     }
     
     cout<<firstoccur(arr,n,x);
+    // cout<<firstoccur(arr,n,x,0,n-1);   //for recursive function
 
 }
 
