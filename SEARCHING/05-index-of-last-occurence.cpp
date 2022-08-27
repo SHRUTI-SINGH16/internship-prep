@@ -63,7 +63,6 @@ int main(){
     for(int i=0;i<n;++i){
         cin>>arr[i];
     }
-    
     cout<<lastoccur(arr,n,x);
     // cout<<lastoccur(arr,n,x,0,n-1);   //for recursive function
 
