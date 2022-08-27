@@ -8,7 +8,6 @@ void nbonacchi(int n,int m){
     for(int i=0;i<n-1;++i){
         arr[i] = 0;
     }
-    arr[]
 }
 
 int main(){
