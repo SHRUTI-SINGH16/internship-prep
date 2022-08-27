@@ -10,9 +10,9 @@ int binary(int arr[],int n, int x,int low, int high){
     if(arr[mid]==x){
         return mid;
     }else if(arr[mid]>x){
-        binary(arr,n,x,low,mid-1);
+        return binary(arr,n,x,low,mid-1);
     }else if(arr[mid]<x){
-        binary(arr,n,x,mid+1,high);
+        return binary(arr,n,x,mid+1,high);
     }
 
 }
