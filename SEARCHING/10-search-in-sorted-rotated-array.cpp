@@ -14,7 +14,6 @@ using namespace std;
 // }
 
 
-
 //TC=O(LOGn)  SC=O(1)
 int sorted(int arr[], int n, int x){
     int low = 0;
@@ -41,7 +40,6 @@ int sorted(int arr[], int n, int x){
 }
 
 
-
 int main(){
     int n,x;
     cin>>n>>x;
@@ -50,7 +48,6 @@ int main(){
         cin>>arr[i];
     }
     cout<<sorted(arr,n,x);
-
 }
 
 
