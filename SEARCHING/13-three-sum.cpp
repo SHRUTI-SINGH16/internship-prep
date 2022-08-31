@@ -23,10 +23,10 @@ void threesum(int arr[], int n, int x){
         int low = i+1;
         int high = n-1;
         while(low<high){
-            if(arr[low]+arr[high]+arr[i]==x){
-                cout<<arr[i]<<arr[low]<<" "<<arr[high]<<endl;
+            if(arr[low]+arr[high]==x-arr[i]){
+                cout<<arr[i]<<" "<<arr[low]<<" "<<arr[high]<<endl;
                 break;
-            }else if(arr[low]+arr[i]+arr[high]>x){
+            }else if(arr[low]+arr[high]>x-arr[i]){
                 high--;
             }else{
                 low++;
