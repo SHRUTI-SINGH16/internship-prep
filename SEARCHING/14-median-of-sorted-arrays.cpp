@@ -4,7 +4,7 @@ using namespace std;
 
 
 //TC = O((n1+n2)log(n1+n2)) SC=O(1)     linear search
-int medianarr(int arr1[],int arr2[], int n1,int n2){
+double medianarr(int arr1[],int arr2[], int n1,int n2){
     int brr[n1+n2];
     for(int i=0;i<n1;++i){
         brr[i] = arr1[i];
@@ -13,7 +13,7 @@ int medianarr(int arr1[],int arr2[], int n1,int n2){
         brr[n1+i] = arr2[i];
     }
     sort(brr,brr+n1+n2);
-    float ans;
+    double ans;
     if((n1+n2)%2==0){
         ans = (brr[(n1+n2)/2] + brr[(n1+n2)/2 - 1])/2;
         return ans;
@@ -38,7 +38,7 @@ int medianarr(int arr1[],int arr2[], int n1,int n2){
 //                 low++;
 //             }
 //         }
-//     } 
+//     }
 // }
 
 
