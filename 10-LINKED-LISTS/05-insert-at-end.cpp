@@ -24,7 +24,7 @@ void insertEnd(Node* &head,int x){
     temp->next = curr;
 }
 
-void traversal(Node* head){
+void traversal(Node* &head){
     Node* curr = head;
     while(curr!= NULL){
         cout<<curr->data<<endl;

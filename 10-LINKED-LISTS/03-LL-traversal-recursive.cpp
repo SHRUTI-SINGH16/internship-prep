@@ -10,7 +10,7 @@ struct Node{
     }
 };
 
-void traversal(Node* head){
+void traversal(Node* &head){
     Node* curr = head;
     if(curr==NULL){
         return;

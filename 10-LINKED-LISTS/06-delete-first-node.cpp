@@ -17,7 +17,11 @@ void insertBegin(Node* &head,int x){
 
 }
 
-void traversal(Node* &head){
+void delfirstnode(Node* &head){
+    head = head->next;
+}
+
+void traversal(Node* head){
     Node* curr = head;
     while(curr!= NULL){
         cout<<curr->data<<endl;
@@ -25,14 +29,16 @@ void traversal(Node* &head){
     }
 }
 
-int main(){
-    int x;
-    cin>>x;
+int main()
+{
     Node* head = NULL;
     insertBegin(head,10);
     insertBegin(head,20);
     insertBegin(head,30);
-    insertBegin(head,x);
+    insertBegin(head,40);
+    insertBegin(head,50);
+    insertBegin(head,60);
+    delfirstnode(head);
     traversal(head);
     return 0;
 }
