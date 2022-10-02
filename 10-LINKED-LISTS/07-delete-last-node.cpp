@@ -17,10 +17,21 @@ void insertBegin(Node* &head,int x){
 
 }
 
-void delfirstnode(Node* &head){
+void dellastnode(Node* &head){
+    if(head==NULL){
+        return;
+    }
+    if(head->next==NULL){
+        head = NULL;
+        delete head;
+        return;
+    }
     Node* temp = head;
-    head = temp->next;
-    delete temp;
+    while(temp->next->next!=NULL){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    delete temp->next;
 }
 
 void traversal(Node* head){
@@ -40,7 +51,7 @@ int main()
     insertBegin(head,40);
     insertBegin(head,50);
     insertBegin(head,60);
-    delfirstnode(head);
+    dellastnode(head);
     traversal(head);
     return 0;
 }
