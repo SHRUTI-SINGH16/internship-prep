@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 struct Node{
@@ -17,33 +18,25 @@ void insertBegin(Node* &head,int x){
 
 }
 
-void insertPos(Node* &head,int pos, int x){
-    Node* newNode = new Node(x);
-    if(pos==1){
-        newNode->next = head;
-        head = newNode;
-        return;
-    }
+int search(Node* &head,int x){
     Node* temp = head;
-    for(int i=1;i<=pos-2;++i){
-        if(temp!=NULL){
-            temp=temp->next;
+    int pos = 1;
+    while(temp!=NULL){
+        if(temp->data==x){
+            return pos;
         }
+        pos++;
+        temp = temp->next;
     }
-    if(temp==NULL){
-        return;
-    }
-    newNode->next = temp->next;
-    temp->next = newNode;
+    return -1;
 }
 
 void traversal(Node* head){
     Node* curr = head;
     while(curr!= NULL){
-        cout<<curr->data<<" ";
+        cout<<curr->data<<endl;
         curr=curr->next;
     }
-    cout<<endl;
 }
 
 int main()
@@ -55,9 +48,9 @@ int main()
     insertBegin(head,40);
     insertBegin(head,50);
     insertBegin(head,60);
-    insertPos(head,2,80);
-    insertPos(head,1,90);
-    insertPos(head,11,180);
+    cout<<search(head,60)<<endl;
+    cout<<search(head,10)<<endl;
+    cout<<search(head,80)<<endl;
     traversal(head);
     return 0;
 }
