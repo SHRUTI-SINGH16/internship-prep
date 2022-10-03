@@ -58,6 +58,7 @@ int main()
     insertPos(head,2,80);
     insertPos(head,1,90);
     insertPos(head,11,180);
+    insertPos(head,9,180);
     traversal(head);
     return 0;
 }

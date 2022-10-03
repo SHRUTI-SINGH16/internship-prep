@@ -34,9 +34,10 @@ int search(Node* &head,int x){
 void traversal(Node* head){
     Node* curr = head;
     while(curr!= NULL){
-        cout<<curr->data<<endl;
+        cout<<curr->data<<" ";
         curr=curr->next;
     }
+    cout<<endl;
 }
 
 int main()
