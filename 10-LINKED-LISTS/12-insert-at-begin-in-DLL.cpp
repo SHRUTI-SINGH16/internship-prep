@@ -16,7 +16,11 @@ void insertBegin(Node* &head,int x){
     Node* temp = head;
     Node* newNode = new Node(x);
     newNode->next = temp;
+    if(head!=NULL){
+        temp->prev = newNode;
+    }
     head = newNode; 
+    
 }
 
 void traversal(Node* &head){
