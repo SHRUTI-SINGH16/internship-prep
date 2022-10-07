@@ -30,9 +30,7 @@ void reverse(Node* &head){
         return;
     }
     while(temp!=NULL){
-        x = temp->next;
-        temp->next = temp->prev;
-        temp->prev = x;
+        swap(temp->next,temp->prev);
         temp = temp->next;
     }
     head = temp;
