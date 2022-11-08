@@ -37,9 +37,9 @@ void deletelast(Node* &head){
     while(temp->next->next!=NULL){
         temp = temp->next;
     }
+    Node* lastnode = temp->next;
     temp->next = NULL;
-    temp = temp->next;
-    delete temp;
+    delete lastnode;
 }
 
 void traversal(Node* &head){
