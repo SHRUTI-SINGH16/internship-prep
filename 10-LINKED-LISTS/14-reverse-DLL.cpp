@@ -25,15 +25,20 @@ void insertBegin(Node* &head,int x){
 
 void reverse(Node* &head){
     Node* temp = head;
-    Node* x = NULL;
-    if(head==NULL || head->next==NULL){
+    Node* temp1 = NULL;
+    if(head==NULL){
+        return;
+    }
+    if(head->next==NULL){
         return;
     }
     while(temp!=NULL){
-        swap(temp->next,temp->prev);
-        temp = temp->next;
+        temp1 = temp->prev;
+        temp->prev = temp->next;
+        temp->next = temp1;
+        temp = temp->prev;
     }
-    head = temp;
+    head = temp1->prev;
 }
 
 void traversal(Node* &head){
@@ -50,6 +55,7 @@ int main(){
     insertBegin(head,10);
     insertBegin(head,20);
     insertBegin(head,30);
+    insertBegin(head,40);
     traversal(head);
     reverse(head);
     traversal(head);
