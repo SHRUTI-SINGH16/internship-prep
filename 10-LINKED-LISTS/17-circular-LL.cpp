@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 struct Node{
@@ -6,23 +7,21 @@ struct Node{
     Node* next;
 
     Node(int x){
-        data=x;
-        next=NULL;
+        data = x;
+        next = NULL;
     }
 };
 
-
 int main(){
-    
     Node* head;
     Node* temp = new Node(10);
     Node* temp1 = new Node(20);
     Node* temp2 = new Node(30);
-
-    temp -> next = temp1;
-    temp1 -> next = temp2;
+    temp->next = temp1;
+    temp1->next = temp2;
+    temp2->next = temp;
     head = temp;
-    
+
     cout<<temp->next<<endl;
     cout<<temp1->next<<endl;
     cout<<temp2->next<<endl;
@@ -30,5 +29,6 @@ int main(){
     cout<<temp->data<<endl;
     cout<<temp1->data<<endl;
     cout<<temp2->data<<endl;
+    
     return 0;
 }
