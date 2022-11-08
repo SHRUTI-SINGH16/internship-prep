@@ -18,6 +18,9 @@ void insertBegin(Node* &head,int x){
 }
 
 void delfirstnode(Node* &head){
+    if (head == NULL){
+        return;
+    }
     Node* temp = head;
     head = temp->next;
     delete temp;
