@@ -12,15 +12,38 @@ struct Node{
     }
 };
 
-void insertBegin(Node* &head, int x){
+////TC=O(N)
+// void insertEnd(Node* &head, int x){
+//     Node* newNode = new Node(x);
+//     Node* curr = head;
+//     if(head == NULL){
+//         newNode->next = newNode;
+//         head = newNode;
+//     }else{
+//         while(curr->next!=head){
+//             curr=curr->next;
+//         }
+//         curr->next = newNode;
+//         newNode->next = head;
+//     }
+// }
+
+
+//TC=O(1)
+void insertEnd(Node* &head, int x){
     Node* newNode = new Node(x);
-    Node* temp = head;
-    newNode = head;
-    while(temp!=head){
-        temp=temp->next;
+    if(head == NULL){
+        newNode->next = newNode;
+        head = newNode;
+    }else{
+        newNode->next = head->next;
+        head->next = newNode;
+        int temp = head->data;
+        head->data = newNode->data;
+        newNode->data = temp;
+        head = newNode;
+
     }
-    temp->next = newNode;
-    head = newNode;
 }
 
 void traverse(Node* &head){
@@ -36,17 +59,11 @@ void traverse(Node* &head){
 }
 
 int main(){
-    Node* head;
-    Node* temp = new Node(10);
-    Node* temp1 = new Node(20);
-    Node* temp2 = new Node(30);
-    temp->next = temp1;
-    temp1->next = temp2;
-    temp2->next = temp;
-    head = temp;
-    traverse(head);
-    insertBegin(head,50);
-    insertBegin(head,60);
+    Node* head = NULL;
+    insertEnd(head,50);
+    insertEnd(head,60);
+    insertEnd(head,150);
+    insertEnd(head,160);
     traverse(head);
     
     return 0;
