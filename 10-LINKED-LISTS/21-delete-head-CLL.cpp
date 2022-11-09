@@ -61,7 +61,7 @@ void delHead(Node* &head){
     }else{
         head->data = head->next->data;
         temp = temp->next;
-        head->next = temp->next;
+        head->next = temp->next; 
         delete temp;
     }
 }
