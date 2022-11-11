@@ -85,7 +85,7 @@ int main(){
     insertEnd(head,150);
     insertEnd(head,160);
     traverse(head);
-    delknode(head,2);
+    delknode(head,4);
     traverse(head);
     
     return 0;
