@@ -34,7 +34,7 @@ void middle(Node* &head){
         count++;
         curr=curr->next;
     }
-    curr = head;
+    curr = head; 
     for(int i=0;i<count/2;++i){
         curr=curr->next;
     }
@@ -45,9 +45,10 @@ void middle(Node* &head){
 void traversal(Node* &head){
     Node* curr = head;
     while(curr!= NULL){
-        cout<<curr->data<<endl;
+        cout<<curr->data<<" ";
         curr=curr->next;
     }
+    cout<<endl;
 }
 
 int main(){ 
@@ -57,6 +58,7 @@ int main(){
     insertEnd(head,30);
     insertEnd(head,40);
     insertEnd(head,50);
+    insertEnd(head,60);
     middle(head);
     traversal(head);
     return 0;
