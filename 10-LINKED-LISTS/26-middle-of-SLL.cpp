@@ -43,7 +43,6 @@ void insertEnd(Node* &head,int x){
 // }
 
 void middle(Node* &head){
-    int count = 0;
     if(head==NULL){
         return;
     }
