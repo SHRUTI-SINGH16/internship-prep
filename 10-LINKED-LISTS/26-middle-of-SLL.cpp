@@ -24,21 +24,36 @@ void insertEnd(Node* &head,int x){
     temp->next = curr;
 }
 
+// void middle(Node* &head){
+//     int count = 0;
+//     if(head==NULL){
+//         return;
+//     }
+//     Node* curr = head;
+//     while(curr!=NULL){
+//         count++;
+//         curr=curr->next;
+//     }
+//     curr = head; 
+//     for(int i=0;i<count/2;++i){
+//         curr=curr->next;
+//     }
+//     cout<<curr->data<<endl;
+
+// }
+
 void middle(Node* &head){
     int count = 0;
     if(head==NULL){
         return;
     }
-    Node* curr = head;
-    while(curr!=NULL){
-        count++;
-        curr=curr->next;
+    Node* slow = head;
+    Node* fast = head;
+    while(fast!=NULL && fast->next!=NULL){
+        fast = fast->next->next;
+        slow = slow->next;
     }
-    curr = head; 
-    for(int i=0;i<count/2;++i){
-        curr=curr->next;
-    }
-    cout<<curr->data<<endl;
+    cout<<slow->data<<endl;
 
 }
 
