@@ -34,17 +34,29 @@ void traversal(Node* &head){
     cout<<endl;
 }
 
-
+void removeDuplicate(Node* &head){
+    Node* curr = head;
+    while(curr!=NULL && curr->next!=NULL){
+        if(curr->data == curr->next->data){
+            Node* temp = curr->next;
+            curr->next = curr->next->next;
+            delete temp;
+        }else{
+            curr=curr->next;
+        }
+    }
+}
 
 int main(){
     Node* head = NULL;
     insertEnd(head,10);
+    insertEnd(head,10);
+    insertEnd(head,10);
+    insertEnd(head,20);
     insertEnd(head,20);
     insertEnd(head,30);
-    insertEnd(head,40);
-    insertEnd(head,50);
-    insertEnd(head,60);
     traversal(head);
+    removeDuplicate(head);
     traversal(head);
     return 0; 
 }
