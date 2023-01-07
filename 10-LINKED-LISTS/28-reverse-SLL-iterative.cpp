@@ -47,7 +47,7 @@ void traversal(Node* &head){
 //     }
 // }
 
-
+//TC=O(N) SC=O(1)
 void reverse(Node* &head){
     Node* curr = head;
     Node* prev = NULL;
