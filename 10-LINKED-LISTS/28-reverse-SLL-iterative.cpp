@@ -34,19 +34,33 @@ void traversal(Node* &head){
     cout<<endl;
 }
 
+////TC=O(N) SC=O(N)
+// void reverse(Node* &head){
+//     vector<int> data;
+//     Node* curr;
+//     for(curr = head;curr!=NULL;curr=curr->next){
+//         data.push_back(curr->data);
+//     }
+//     for(curr = head;curr!=NULL;curr=curr->next){
+//         curr->data = data.back();
+//         data.pop_back();
+//     }
+// }
+
+
 void reverse(Node* &head){
-    vector<int> data;
-    Node* curr;
-    for(curr = head;curr!=NULL;curr=curr->next){
-        data.push_back(curr->data);
+    Node* curr = head;
+    Node* prev = NULL;
+    Node* next;
+
+    while(curr!=NULL){
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
-    for(curr = head;curr!=NULL;curr=curr->next){
-        curr->data = data.back();
-        data.pop_back();
-    }
+    head = prev;
 }
-
-
 
 int main(){
     Node* head = NULL;
