@@ -46,7 +46,7 @@ void majority(int arr[],int n){
         }  
     }
     if(total>=n/2){
-        cout<<res<<endl;;
+        cout<<arr[res]<<endl;;
     }else{
         cout<<-1<<endl;
     }

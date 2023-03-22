@@ -42,7 +42,6 @@ void insertEnd(Node* &head, int x){
         head->data = newNode->data;
         newNode->data = temp;
         head = newNode;
-
     }
 }
 
